@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #090d16;
+    --bg-card: #0f172a;
+    --bg-card-subtle: #1e293b;
+    --border-color: #1e293b;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --accent-emerald: #10b981;
+    --accent-rose: #f43f5e;
+    --accent-cyan: #06b6d4;
+    --accent-indigo: #6366f1;
+    --accent-amber: #f59e0b;
+  }
+}
+
+body {
+  background-color: #080c14;
+  color: #f1f5f9;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #090d16;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Price flash animations */
+@keyframes flashGreen {
+  0% {
+    background-color: rgba(16, 185, 129, 0.35);
+    color: #34d399;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes flashRed {
+  0% {
+    background-color: rgba(244, 63, 94, 0.35);
+    color: #fb7185;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+.flash-up {
+  animation: flashGreen 1.2s ease-out;
+}
+
+.flash-down {
+  animation: flashRed 1.2s ease-out;
+}
+
+/* Glassmorphism effects */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-elevated {
+  background: rgba(17, 24, 39, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.glass-card-hover {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-card-hover:hover {
+  transform: translateY(-2px);
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 12px 24px -10px rgba(99, 102, 241, 0.15);
+}
+
+/* Glowing text effects */
+.glow-emerald {
+  text-shadow: 0 0 12px rgba(16, 185, 129, 0.4);
+}
+.glow-rose {
+  text-shadow: 0 0 12px rgba(244, 63, 94, 0.4);
+}
+.glow-indigo {
+  text-shadow: 0 0 12px rgba(99, 102, 241, 0.4);
+}
